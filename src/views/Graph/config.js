@@ -7,12 +7,15 @@ const legend = new G6.Legend({
   align: 'left',
   title: '图例',
   titleConfig: {
-    position: 'left',
-    offsetX: 0,
-    offsetY: 12,
+    offsetX: -15,
+    offsetY: 10,
+  },
+  containerStyle: {
+    fill: '#031547',
+    lineWidth: 1,
   },
   position: 'bottom-right',
-  padding: [4, 16, 8, 16],
+  padding: [4, 0, 10, 40],
   margin: [0, 100, 100, 0],
   filter: {
     enable: true,
@@ -20,14 +23,17 @@ const legend = new G6.Legend({
     graphActiveState: 'activeByLegend',
     graphInactiveState: 'inactiveByLegend',
     filterFunctions: {
-      绿色边: (d) => {
-        return d.legendType === '绿色边'
+      电信光纤线路40G: (d) => {
+        return d.legendType === '电信光纤线路40G'
       },
-      红色边: (d) => {
-        return d.legendType === '红色边'
+      联通光纤线路40G: (d) => {
+        return d.legendType === '联通光纤线路40G'
       },
-      紫色边: (d) => {
-        return d.legendType === '紫色边'
+      联通光纤线路10G: (d) => {
+        return d.legendType === '联通光纤线路10G'
+      },
+      广电光纤线路10G: (d) => {
+        return d.legendType === '广电光纤线路10G'
       },
     },
   },
@@ -82,7 +88,7 @@ export const graphConfig = {
       lineWidth: 3,
     },
     inactiveByLegend: {
-      opacity: 0.5,
+      opacity: 0.05,
     },
   },
 }
