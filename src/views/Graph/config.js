@@ -1,12 +1,16 @@
 import nodeImg from '../../assets/node.png'
 import { legendData } from './data'
 import G6 from '@antv/g6'
+console.log(G6.Legend)
 const legend = new G6.Legend({
   data: legendData,
   layout: 'vertical',
   align: 'left',
   title: '图例',
   titleConfig: {
+    style: {
+      fill: '#fff',
+    },
     offsetX: -15,
     offsetY: 10,
   },
@@ -16,7 +20,7 @@ const legend = new G6.Legend({
   },
   position: 'bottom-right',
   padding: [4, 0, 10, 40],
-  margin: [0, 100, 100, 0],
+  margin: [0, 10, 10, 0],
   filter: {
     enable: true,
     trigger: 'click',
@@ -43,18 +47,18 @@ export const graphConfig = {
   autoPaint: true,
   fitCenter: true,
   modes: {
-    default: ['drag-combo', 'drag-canvas', 'zoom-canvas'],
+    default: ['drag-combo', 'drag-canvas', 'zoom-canvas', 'drag-node'],
   },
   plugins: [legend],
   defaultNode: {
     type: 'image',
     img: nodeImg,
     size: [30, 30],
-    // labelCfg: {
-    //   style: {
-    //     fill: '#fff',
-    //   },
-    // },
+    labelCfg: {
+      style: {
+        fill: '#fff',
+      },
+    },
   },
   defaultEdge: {
     style: {
@@ -66,11 +70,14 @@ export const graphConfig = {
     size: [300, 100],
     style: {
       fill: '',
+      stroke: '#203b69',
+      shadowBlur: 20,
+      shadowColor: 'blue',
     },
     labelCfg: {
-      // style: {
-      //   fill: '#fff',
-      // },
+      style: {
+        fill: '#fff',
+      },
       position: 'top',
     },
   },

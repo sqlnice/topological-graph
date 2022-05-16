@@ -24,6 +24,7 @@ const initGraph = () => {
   })
   graph.data(data)
   graph.render()
+  graph.fitCenter()
 
   graph.on('combo:mouseenter', (evt) => {
     const { item } = evt
@@ -47,9 +48,16 @@ const initGraph = () => {
 </script>
 
 <style>
+#app {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 #mountNode {
-  /* background-color: #172d67; */
-  width: 100vw;
-  height: 100vh;
+  background-color: #0c1932;
+  width: 100%;
+  height: 100%;
 }
 </style>
