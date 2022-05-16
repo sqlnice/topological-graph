@@ -61,6 +61,7 @@ export const graphConfig = {
     },
   },
   defaultEdge: {
+    type: 'cubic-vertical',
     style: {
       lineWidth: 2,
     },
