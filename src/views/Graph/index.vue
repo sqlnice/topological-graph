@@ -24,25 +24,33 @@ const initGraph = () => {
   })
   graph.data(data)
   graph.render()
-  graph.fitCenter()
-
-  graph.on('combo:mouseenter', (evt) => {
-    const { item } = evt
-    graph.setItemState(item, 'active', true)
-  })
-
-  graph.on('combo:mouseleave', (evt) => {
-    const { item } = evt
-    graph.setItemState(item, 'active', false)
-  })
-  graph.on('combo:click', (evt) => {
-    const { item } = evt
-    graph.setItemState(item, 'selected', true)
+  graph.fitView()
+  graph.on('node:click', (evt) => {
+    // 当前点上存在线
+    // if (item.getEdges().length) {
+    //   graph.getEdges().forEach((edge) => {
+    //     // 线的目标是此节点
+    //     if (edge.getTarget() === item) {
+    //       graph.setItemState(edge, 'inactiveByLegend', false)
+    //       graph.setItemState(edge, 'activeByLegend', true)
+    //       console.log(edge)
+    //     } else if (edge.getSource() === item) {
+    //       // 线的起点是此节点
+    //       graph.setItemState(edge, 'inactiveByLegend', false)
+    //       graph.setItemState(edge, 'activeByLegend', true)
+    //     } else {
+    //       // 其他无关线
+    //       graph.setItemState(edge, 'activeByLegend', false)
+    //       graph.setItemState(edge, 'inactiveByLegend', true)
+    //     }
+    //   })
+    // }
   })
   graph.on('canvas:click', (evt) => {
-    graph.getCombos().forEach((combo) => {
-      graph.clearItemStates(combo)
-    })
+    // graph.getEdges().forEach((edge) => {
+    //   graph.setItemState(edge, 'activeByLegend', false)
+    //   graph.setItemState(edge, 'inactiveByLegend', false)
+    // })
   })
 }
 </script>
