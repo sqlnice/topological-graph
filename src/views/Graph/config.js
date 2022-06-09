@@ -31,17 +31,17 @@ export const legend = new G6.Legend({
     graphActiveState: 'activeByLegend',
     graphInactiveState: 'inactiveByLegend',
     filterFunctions: {
-      电信光纤线路40G: (d) => {
-        return d.legendType === '电信光纤线路40G'
+      供应商2光纤线路40G: d => {
+        return d.legendType === '供应商2光纤线路40G'
       },
-      联通光纤线路40G: (d) => {
-        return d.legendType === '联通光纤线路40G'
+      供应商1光纤线路40G: d => {
+        return d.legendType === '供应商1光纤线路40G'
       },
-      联通光纤线路10G: (d) => {
-        return d.legendType === '联通光纤线路10G'
+      供应商1光纤线路10G: d => {
+        return d.legendType === '供应商1光纤线路10G'
       },
-      广电光纤线路10G: (d) => {
-        return d.legendType === '广电光纤线路10G'
+      供应商3光纤线路10G: d => {
+        return d.legendType === '供应商3光纤线路10G'
       },
     },
   },
